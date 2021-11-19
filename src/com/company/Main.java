@@ -8,11 +8,6 @@ public class Main {
     public static void main(String[] args) {
         Runnable runnable = () -> {
                 synchronized (secondLock) {
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
                     synchronized (firstLock) {
                         System.out.println("In block 1");
                     }
